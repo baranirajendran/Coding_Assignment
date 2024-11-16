@@ -2,8 +2,8 @@ README: Weather Management and Median Calculation Applications
 
 Overview
 This project consists of two Python-based command-line applications:
-1. Weather Management Application**: Interacts with the OpenWeather API to manage weather details for cities and perform operations like searching, favoriting, and updating cities.
-2. Median Calculation Application**: Implements a sorting algorithm to compute the median of an array of numbers.
+1. Weather Management Application: Interacts with the OpenWeather API to manage weather details for cities and perform operations like searching, favoriting, and updating cities.
+2. Median Calculation Application: Implements a sorting algorithm to compute the median of an array of numbers.
 
 Files Included
 1. `weather_predictions.py`: 
@@ -57,10 +57,6 @@ Weather Management Application:
   - Add cities to a favorite list (max 3).
   - List and display weather details for favorite cities.
   - Update the favorite list by removing and adding cities while maintaining the maximum limit.
-- Evaluation Criteria:
-  1. Effective API integration.
-  2. Code readability and maintainability.
-  3. Efficient problem-solving for managing the favorite list and handling API responses.
 
 Median Calculation Application:
 - Objective: Implement the pseudocode provided to calculate the median of an array.
@@ -68,10 +64,6 @@ Median Calculation Application:
   - Sort an array of numbers using a chosen sorting algorithm.
   - Calculate and return the median.
   - Provide a user-friendly interface for input.
-- Evaluation Criteria:
-  1. Accuracy of pseudocode implementation.
-  2. Code efficiency and clarity.
-  3. Effective handling of inputs and output of results.
 
 Notes
 - Ensure to replace placeholder API keys (if any) with your actual OpenWeather API key in `weather_predictions.py`.
