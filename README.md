@@ -1,70 +1,96 @@
-README: Weather Management and Median Calculation Applications
+README: Running the Weather Application and Median Calculation Program
 
 Overview
-This project consists of two Python-based command-line applications:
-1. Weather Management Application: Interacts with the OpenWeather API to manage weather details for cities and perform operations like searching, favoriting, and updating cities.
-2. Median Calculation Application: Implements a sorting algorithm to compute the median of an array of numbers.
 
-Files Included
-1. `weather_predictions.py`: 
-   - Manages weather details of cities using the OpenWeather API.
-   - Implements functionalities such as:
-     - Search weather for a city.
-     - Add cities to favorites (max 3).
-     - List favorite cities and their weather.
-     - Update favorite cities.
+This repository contains two applications:
 
-2. `median_generation.py`:
-   - Implements a sorting algorithm to sort an array and calculate its median.
-   - Offers a simple interface to input an array of numbers or use predefined test cases.
+1. Weather Application: A command-line tool that interacts with the OpenWeather API to fetch, manage, and display weather information.
+2. Median Calculation Program: A utility to sort a list of numbers and find their median.
 
-Setup and Usage
+ Prerequisites
 
-1. Prerequisites:
-   - Python 3.x installed on your machine.
-   - Install dependencies using the command:
+- Compiler: A C++ compiler supporting C++17 (e.g., `g++`).
+- Dependencies:
+  - `libcurl`: Required for the Weather Application to make HTTP requests.
+  - `nlohmann/json` header file for JSON parsing (included in the repository).
+
+ Setup Instructions
+
+ Step 1: Install Required Tools and Libraries
+
+1. Install `libcurl`:
+   - On macOS:
      ```bash
-     pip install requests
+     brew install curl
      ```
+   - On Linux:
+     ```bash
+     sudo apt-get install libcurl4-openssl-dev
+     ```
+   - On Windows:
+     Use a package manager like `vcpkg` to install `libcurl`.
 
-2. Running the Applications:
+2. Include `json.hpp`:
+   - Ensure the `json.hpp` file (from nlohmann JSON library) is in the same directory as the `weather_app.cpp`.
 
-   - Weather Management Application:
-     1. Navigate to the directory containing the files.
-     2. Run the application with:
-        ```bash
-        python3 weather_predictions.py
-        ```
-     3. Follow the on-screen prompts to:
-        - Search for city weather.
-        - Add, view, and update favorite cities.
+ Step 2: Set Environment Variables for `libcurl`
 
-   - Median Calculation Application:
-     1. Navigate to the directory containing the files.
-     2. Run the application with:
-        ```bash
-        python3 median_generation.py
-        ```
-     3. Input an array of numbers as prompted, or use the predefined test cases.
-     4. The application will display the sorted array and its median.
+   ```bash
+   export LDFLAGS="-L/usr/local/opt/curl/lib"
+   export CPPFLAGS="-I/usr/local/opt/curl/include"
+   ```
 
-Assignment Objective
+ Compilation and Execution
 
-Weather Management Application:
-- Objective: Develop a CLI tool to interact with the OpenWeather API for managing city weather details.
-- Features:
-  - Search and retrieve current weather for a city.
-  - Add cities to a favorite list (max 3).
-  - List and display weather details for favorite cities.
-  - Update the favorite list by removing and adding cities while maintaining the maximum limit.
+ 1. Weather Application
 
-Median Calculation Application:
-- Objective: Implement the pseudocode provided to calculate the median of an array.
-- Features:
-  - Sort an array of numbers using a chosen sorting algorithm.
-  - Calculate and return the median.
-  - Provide a user-friendly interface for input.
+1. Compile the Weather Application:
+   ```bash
+   g++ -std=c++17 weather_app.cpp -o weather_app -lcurl
+   ```
+
+2. Run the Weather Application:
+   ```bash
+   ./weather_app
+   ```
+
+ 2. Median Calculation Program
+
+1. Compile the Median Calculation Program:
+   ```bash
+   g++ -std=c++17 median_generation.cpp -o median_generation
+   ```
+
+2. Run the Median Calculation Program:
+   ```bash
+   ./median_generation
+   ```
+
+ Features
+
+ Weather Application
+- Search Weather: Fetch current weather for any city using the OpenWeather API.
+- Manage Favourites:
+  - Add cities to favourites (maximum of 3).
+  - List all favourite cities with their weather details.
+  - Update favourites by replacing an existing city.
+- Caching: Weather data is cached for 5 minutes to minimize API requests.
+
+ Median Calculation Program
+- Sorting: Implements a sorting algorithm to arrange numbers in ascending order.
+- Median Calculation:
+  - Returns the median for a list of numbers.
+  - Supports both odd and even-sized lists.
 
 Notes
-- Ensure to replace placeholder API keys (if any) with your actual OpenWeather API key in `weather_predictions.py`.
-- Both programs are standalone and independent. You can test and use them separately.
+-Weather Application:
+  - Replace the `API_KEY` placeholder in `weather_app.cpp` with your OpenWeather API key.
+  - The program uses `nlohmann/json.hpp` for JSON parsing.
+
+Median Calculation Program:
+  - Input numbers are predefined or can be modified in the code.
+
+Troubleshooting
+- Ensure `libcurl` is correctly installed and its paths are set using `LDFLAGS` and `CPPFLAGS`.
+- Ensure `json.hpp` is in the correct directory for the Weather Application.
+- Use `g++ --version` to confirm your compiler supports C++17. Update if necessary.
