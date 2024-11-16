@@ -6,7 +6,7 @@ This project consists of two Python-based command-line applications:
 2. Median Calculation Application**: Implements a sorting algorithm to compute the median of an array of numbers.
 
 Files Included
-1. weather_predictions.py`: 
+1. `weather_predictions.py`: 
    - Manages weather details of cities using the OpenWeather API.
    - Implements functionalities such as:
      - Search weather for a city.
