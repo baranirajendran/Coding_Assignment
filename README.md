@@ -76,4 +76,3 @@ Median Calculation Application:
 Notes
 - Ensure to replace placeholder API keys (if any) with your actual OpenWeather API key in `weather_predictions.py`.
 - Both programs are standalone and independent. You can test and use them separately.
-- For submission, push these files to your GitHub repository and share the link as required.
